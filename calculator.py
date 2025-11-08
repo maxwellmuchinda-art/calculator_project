@@ -49,4 +49,16 @@ def display_history():
     for i, e in enumerate(history, 1):
         print(f"{i}. {e}")
     print()
-
+def clear_history():
+    global history, operations_count
+    history = []
+    operations_count = 0
+    print("History cleared.")
+def memory_add(value):
+    global memory
+    memory += (value or 0.0)    
+    print("Added to memory.")
+def memory_subtract(value):
+    global memory
+    memory -= (value or 0.0)
+    print("Subtracted from memory.")
