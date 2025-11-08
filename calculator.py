@@ -2,7 +2,6 @@
 # ICT111 - Lab 1 Python Calculator
 # GROUP 9
 # lab1_calculator.py
-# 
 history = []
 operations_count = 0
 memory = 0.0
@@ -24,3 +23,15 @@ if b ==0:
     print("Error: Division by zero.")
     return None
 return a/ b
+def modulus(a, b):
+    if b == 0:
+        print("Error: Modulus by zero.")
+        return None
+    return a % b
+def get_number_input(prompt):
+    while True:
+        s = input(prompt)
+        try:
+            return float(s)
+        except ValueError:
+            print("Invalid input. Please enter a number.")
