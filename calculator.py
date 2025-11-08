@@ -62,3 +62,19 @@ def memory_subtract(value):
     global memory
     memory -= (value or 0.0)
     print("Subtracted from memory.")
+def memory_recall():
+    print(f"Memory = {format_number(memory)}")
+    return memory
+def memory_clear():
+    global memory
+    memory = 0.0
+    print("Memory cleared.")
+def main():
+    global last_result
+    ops = {
+        "1": ("+", add),
+        "2": ("-", subtract),
+        "3": ("*", multiply),
+        "4": ("/", divide),
+        "5": ("%", modulus)
+    }
