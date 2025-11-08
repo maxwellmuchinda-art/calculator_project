@@ -78,3 +78,18 @@ def main():
         "4": ("/", divide),
         "5": ("%", modulus)
     }
+    while True:
+        print("\nSimple calculator Menu: ")
+        print("1) Add")
+        print("2) Subtract")
+        print("3) Multiply")
+        print("4) Divide")
+        print("5) Modulus")
+        print("6) Show history")
+        print("7) Clear History")
+        print("8) Memory: M+")
+        print("9) Memory: M-")
+        print("10) Memory: MR (recall)")
+        print("11) Memory: MC (clear)")
+        print("12) Show operations count")
+        print("0) Exit")
