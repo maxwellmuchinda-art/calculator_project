@@ -96,3 +96,8 @@ def main():
         if choice == "0":
             print("Goodbye.")
             break
+ if choice in ops:
+            op_symbol, func = ops[choice]
+            n1 = get_number_input("Enter first number: ")
+            n2 = get_number_input("Enter second number: ")
+            result = func(n1, n2)
