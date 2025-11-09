@@ -101,3 +101,7 @@ def main():
             n1 = get_number_input("Enter first number: ")
             n2 = get_number_input("Enter second number: ")
             result = func(n1, n2)
+ if result is not None:
+                last_result = result
+                print(f"Result: {format_number(result)}")
+            update_history(n1, op_symbol, n2, result)
