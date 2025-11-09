@@ -2,6 +2,7 @@
 # ICT111 - Lab 1 Python Calculator
 # GROUP 9
 # lab1_calculator.py
+import math
 history = []
 operations_count = 0
 memory = 0.0
@@ -28,6 +29,13 @@ def modulus(a, b):
         print("Error: Modulus by zero.")
         return None
     return a % b
+def power(a, b):
+    return a ** b
+def square_root(a):
+    if a < 0:
+        print("Error: Cannot take square root of a negative number.")
+        return None
+        return math.sqrt(a)
 def get_number_input(prompt):
     while True:
         s = input(prompt)
@@ -76,7 +84,9 @@ def main():
         "2": ("-", subtract),
         "3": ("*", multiply),
         "4": ("/", divide),
-        "5": ("%", modulus)
+        "5": ("%", modulus),
+        "6": ("^", power)
+    }
     while True:
         print("\nSimple calculator Menu: ")
         print("1) Add")
@@ -84,13 +94,15 @@ def main():
         print("3) Multiply")
         print("4) Divide")
         print("5) Modulus")
-        print("6) Show history")
-        print("7) Clear History")
-        print("8) Memory: M+")
-        print("9) Memory: M-")
-        print("10) Memory: MR (recall)")
-        print("11) Memory: MC (clear)")
-        print("12) Show operations count")
+        print("6) Power (x^y)")
+        print("7) Square Root (sqrt)")
+        print("8) Show history")
+        print("9) Clear History")
+        print("10) Memory: M+")
+        print("11) Memory: M-")
+        print("12) Memory: MR (recall)")
+        print("13) Memory: MC (clear)")
+        print("14) Show operations count")
         print("0) Exit")
  choice = input("Select option: ").strip()
         if choice == "0":
@@ -105,3 +117,10 @@ def main():
                 last_result = result
                 print(f"Result: {format_number(result)}")
             update_history(n1, op_symbol, n2, result)
+elif choice == "7":
+     n1 = get_number_input("Enter a number: ")
+     result = square_root(n1)
+     if result is not None:
+         last_result = result
+         print(f"Result:{format_number(result)}")
+     update_history(n1, "sqrt", "", result)
