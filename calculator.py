@@ -77,7 +77,6 @@ def main():
         "3": ("*", multiply),
         "4": ("/", divide),
         "5": ("%", modulus)
-    }
     while True:
         print("\nSimple calculator Menu: ")
         print("1) Add")
@@ -93,3 +92,7 @@ def main():
         print("11) Memory: MC (clear)")
         print("12) Show operations count")
         print("0) Exit")
+ choice = input("Select option: ").strip()
+        if choice == "0":
+            print("Goodbye.")
+            break
