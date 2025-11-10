@@ -24,6 +24,7 @@ if b ==0:
     print("Error: Division by zero.")
     return None
 return a/ b
+# Modulus function by william
 def modulus(a, b):
     if b == 0:
         print("Error: Modulus by zero.")
