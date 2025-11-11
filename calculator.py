@@ -107,7 +107,7 @@ def main():
         print("0) Exit")
  choice = input("Select option: ").strip()
         if choice == "0":
-            print("Goodbye thank you for using grop 9's calculator 😊.")
+            print("Goodbye thank you for using group 9's calculator 😊.")
             break
  if choice in ops:
             op_symbol, func = ops[choice]
