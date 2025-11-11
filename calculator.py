@@ -22,7 +22,7 @@ def multiply(a, b):
 def divide(a, b):
     if b ==0:
         print("Error: Division by zero.")
-    return None
+        return None
     return a/ b
 # Modulus function by william
 def modulus(a, b):
