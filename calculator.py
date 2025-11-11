@@ -125,3 +125,27 @@ elif choice == "7":
          last_result = result
          print(f"Result:{format_number(result)}")
      update_history(n1, "sqrt", "", result)
+    elif choice == "8":
+        display_history()
+    elif choice == "9":
+        clear_history()
+    elif choice == "10":
+        if last_result is None:
+            print("No last result to add to memory.")
+        else:
+                memory_add(last_result)
+    elif choice == "11":
+        if last_result is None:
+            print("No last result to subtract from memory.")
+        else:
+            memory_subtract(last_result)
+    elif choice == "12":
+        memory_recall()
+    elif choice == "13":
+        memory_clear()
+    elif choice == "14":
+        print(f"Operations count (successful): {operations_count}")
+    else:
+        print("Invalid option. Please choose again.")
+if __name__ == "__main__":
+    main()
