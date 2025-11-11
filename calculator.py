@@ -15,15 +15,15 @@ def format_number(x):
     return str(x)
 def add(a, b):
     return a + b
-def sub(a, b):
+def subtract(a, b):
     return a - b 
 def multiply(a, b):
     return a * b 
 def divide(a, b):
-if b ==0:
-    print("Error: Division by zero.")
+    if b ==0:
+        print("Error: Division by zero.")
     return None
-return a/ b
+    return a/ b
 # Modulus function by william
 def modulus(a, b):
     if b == 0:
@@ -105,47 +105,47 @@ def main():
         print("13) Memory: MC (clear)")
         print("14) Show operations count")
         print("0) Exit")
- choice = input("Select option: ").strip()
+        choice = input("Select option: ").strip()
         if choice == "0":
             print("Goodbye.")
             break
- if choice in ops:
+        if choice in ops:
             op_symbol, func = ops[choice]
             n1 = get_number_input("Enter first number: ")
             n2 = get_number_input("Enter second number: ")
             result = func(n1, n2)
- if result is not None:
+            if result is not None:
                 last_result = result
                 print(f"Result: {format_number(result)}")
             update_history(n1, op_symbol, n2, result)
-elif choice == "7":
-     n1 = get_number_input("Enter a number: ")
-     result = square_root(n1)
-     if result is not None:
-         last_result = result
-         print(f"Result:{format_number(result)}")
-     update_history(n1, "sqrt", "", result)
-    elif choice == "8":
-        display_history()
-    elif choice == "9":
-        clear_history()
-    elif choice == "10":
-        if last_result is None:
-            print("No last result to add to memory.")
-        else:
+        elif choice == "7":
+            n1 = get_number_input("Enter a number: ")
+            result = square_root(n1)
+            if result is not None:
+                last_result = result
+                print(f"Result:{format_number(result)}")
+            update_history(n1, "sqrt", "", result)
+        elif choice == "8":
+            display_history()
+        elif choice == "9":
+            clear_history()
+        elif choice == "10":
+            if last_result is None:
+                print("No last result to add to memory.")
+            else:
                 memory_add(last_result)
-    elif choice == "11":
-        if last_result is None:
-            print("No last result to subtract from memory.")
+        elif choice == "11":
+            if last_result is None:
+                print("No last result to subtract from memory.")
+            else:
+                memory_subtract(last_result)
+        elif choice == "12":
+            memory_recall()
+        elif choice == "13":
+            memory_clear()
+        elif choice == "14":
+            print(f"Operations count (successful): {operations_count}")
         else:
-            memory_subtract(last_result)
-    elif choice == "12":
-        memory_recall()
-    elif choice == "13":
-        memory_clear()
-    elif choice == "14":
-        print(f"Operations count (successful): {operations_count}")
-    else:
-        print("Invalid option. Please choose again.")
+            print("Invalid option. Please choose again.")
 if __name__ == "__main__":
     main()
