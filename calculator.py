@@ -36,7 +36,7 @@ def square_root(a):
     if a < 0:
         print("Error: Cannot take square root of a negative number.")
         return None
-        return math.sqrt(a)
+    return math.sqrt(a)
 def get_number_input(prompt):
     while True:
         s = input(prompt)
